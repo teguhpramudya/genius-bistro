@@ -204,7 +204,7 @@ html.js-ready .menu-grid .menu-card:nth-child(4) { transition-delay: 270ms; }
 @keyframes hero-arrive { from { opacity: .74; filter: saturate(.66); } to { opacity: 1; filter: saturate(.86); } }
 @keyframes hero-drift { from { transform: scale(1.015); } to { transform: scale(1.055); } }
 @keyframes hero-sheen { 0%,58% { background-position: 120% 0; opacity: 0; } 72% { opacity: .42; } 89%,100% { background-position: -120% 0; opacity: 0; } }
-@keyframes hero-detail-arrive { from { opacity: 0; filter: blur(3px); transform: translateY(9px); } to { opacity: 1; filter: blur(0); transform: translateY(0); } }
+@keyframes hero-detail-arrive { from { opacity: 0; transform: translateY(9px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes card-glint { 0%,67% { transform: translateX(0) rotate(12deg); opacity: 0; } 72% { opacity: .5; } 88%,100% { transform: translateX(440%) rotate(12deg); opacity: 0; } }
 @keyframes open-light-breathe { 0%,100% { background: #eee8da; box-shadow: 0 0 0 4px rgba(255,245,222,.23),0 0 12px rgba(255,240,200,.3); } 50% { background: #fff9e9; box-shadow: 0 0 0 5px rgba(255,248,225,.34),0 0 22px rgba(255,242,204,.72),0 0 34px rgba(255,242,204,.25); } }
 @keyframes copy-arrive { from { opacity: 0; transform: translateY(13px); } to { opacity: 1; transform: translateY(0); } }
