@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://geniusbistrobali.com data:; connect-src 'self'; form-action 'self'; frame-src 'none'; upgrade-insecure-requests" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#151617" />
+    <meta name="description" content="Explore the Genius Bistro menus in Pererenan, Bali - breakfast, all-day dining, wine and drinks, and happy hour." />
+    <title>Menus - Genius Bistro, Bali</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://geniusbistrobali.com" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./src/styles/main.css" />
+    <link rel="stylesheet" href="./src/styles/menu-page.css" />
+    <script defer src="./src/scripts/menu-page.js"></script>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg?v=4" />
+  </head>
+  <body class="menu-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header menu-header" id="top">
+      <a class="brand" href="./index.html#top" aria-label="Genius Bistro home"><img src="https://geniusbistrobali.com/wp-content/uploads/2024/08/genius-siputra-logo-horizontal-black-300x72.png" alt="Genius Bistro by SIPutra" /></a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="menu-nav"><span></span><span></span></button>
+      <nav class="site-nav" id="menu-nav" aria-label="Main navigation"><a href="./index.html#story">The bistro</a><a href="./menu.html" aria-current="page">Menus</a><a href="./index.html#visit">Find us</a><a class="nav-booking" href="./index.html#reservation-form">Reserve <span aria-hidden="true">↗</span></a></nav>
+    </header>
+
+    <main class="menu-main" id="main">
+      <section class="menu-hero" aria-labelledby="menu-title">
+        <img class="menu-hero-image" src="https://geniusbistrobali.com/wp-content/uploads/2024/08/DSC05405-copy.jpg" alt="A glass of wine poured at Genius Bistro" fetchpriority="high" />
+        <div class="menu-hero-inner"><div><p class="eyebrow"><span class="eyebrow-line"></span> GENIUS BISTRO · PERERENAN, BALI</p><h1 id="menu-title">The <em>menus.</em></h1><p>Ease into the morning, stay for a long lunch, or let the evening linger. Choose a menu to see what’s being served.</p></div><a class="button menu-reserve" href="./index.html#reservation-form">Save me a seat <span class="button-arrow" aria-hidden="true">↗</span></a></div>
+      </section>
+      <section class="menu-overview section-wrap" aria-labelledby="menu-categories-title">
+        <div class="menu-overview-intro"><div><p class="eyebrow"><span class="eyebrow-line"></span> FOUR WAYS TO STAY A WHILE</p><h2 id="menu-categories-title">Find your <em>moment.</em></h2></div><p>Each menu has its own page, so you can browse exactly what you came for.</p></div>
+        <div class="menu-overview-grid">
+          <a class="menu-overview-card menu-overview-card--breakfast" href="./breakfast.html"><span class="overview-number">01 / MORNING</span><span class="overview-open" aria-hidden="true">↗</span><div class="overview-copy"><span>THE FIRST POUR</span><h3>Breakfast</h3><p>Slow mornings, good coffee, and a proper start to the day.</p></div></a>
+          <a class="menu-overview-card menu-overview-card--lunch-dinner" href="./lunch-dinner.html"><span class="overview-number">02 / ALL DAY</span><span class="overview-open" aria-hidden="true">↗</span><div class="overview-copy"><span>THE LONG LUNCH</span><h3>Lunch &amp; dinner</h3><p>French Mediterranean plates made for settling in and sharing.</p></div></a>
+          <a class="menu-overview-card menu-overview-card--wine-drinks" href="./wine-drinks.html"><span class="overview-number">03 / THE POUR</span><span class="overview-open" aria-hidden="true">↗</span><div class="overview-copy"><span>THE LAST WORD</span><h3>Wine &amp; drinks</h3><p>A thoughtful list for a first sip, a toast, and one more glass.</p></div></a>
+          <a class="menu-overview-card menu-overview-card--happy-hour" href="./happy-hour.html"><span class="overview-number">04 / GOLDEN HOUR</span><span class="overview-open" aria-hidden="true">↗</span><div class="overview-copy"><span>THE EARLY EVENING</span><h3>Happy hour</h3><p>Make the most of that in-between hour with a drink and a little something.</p></div></a>
+        </div>
+        <div class="overview-footer"><span>MENUS PROVIDED BY GENIUS BISTRO · PERERENAN, BALI</span><a href="https://www.instagram.com/geniusbistro_bali/" target="_blank" rel="noopener noreferrer">FOLLOW THE GOOD TIMES ON INSTAGRAM ↗</a></div>
+      </section>
+    </main>
+    <footer class="site-footer"><div class="footer-main section-wrap"><a class="footer-brand" href="./index.html#top" aria-label="Genius Bistro - home"><img src="https://geniusbistrobali.com/wp-content/uploads/2024/08/genius-siputra-logo-horizontal-black-300x72.png" alt="Genius Bistro by SIPutra" /></a><p>Good taste.<br /><em>Good company.</em></p><a class="footer-booking" href="./index.html#reservation-form">Make it a date <span>↗</span></a></div><div class="footer-bottom section-wrap"><span>© <span id="year"></span> GENIUS BISTRO</span><span>PERERENAN · BALI</span><a href="https://www.instagram.com/geniusbistro_bali/" target="_blank" rel="noopener noreferrer">INSTAGRAM ↗</a></div></footer>
+  </body>
+</html>
