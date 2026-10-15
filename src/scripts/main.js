@@ -125,15 +125,81 @@ const year = document.querySelector("#year");
 if (year) year.textContent = String(new Date().getFullYear());
 
 const dateInput = document.querySelector("#guest-date");
-if (dateInput) {
-  const now = new Date();
-  const localToday = [now.getFullYear(), String(now.getMonth() + 1).padStart(2, "0"), String(now.getDate()).padStart(2, "0")].join("-");
-  dateInput.min = localToday;
+const timeInput = document.querySelector("#guest-time");
+const reservationTimeZone = "Asia/Makassar";
+
+function getReservationClock() {
+  const parts = new Intl.DateTimeFormat("en-GB", {
+    timeZone: reservationTimeZone,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    hourCycle: "h23",
+  }).formatToParts(new Date()).reduce((values, part) => {
+    if (part.type !== "literal") values[part.type] = part.value;
+    return values;
+  }, {});
+
+  return {
+    date: `${parts.year}-${parts.month}-${parts.day}`,
+    minutes: Number(parts.hour) * 60 + Number(parts.minute),
+  };
 }
 
+function timeValueToMinutes(value) {
+  const [hour, minute] = value.split(":").map(Number);
+  return hour * 60 + minute;
+}
+
+function minutesToTimeValue(minutes) {
+  const hour = String(Math.floor(minutes / 60)).padStart(2, "0");
+  const minute = String(minutes % 60).padStart(2, "0");
+  return `${hour}:${minute}`;
+}
+
+function formatReservationTimeLabel(value) {
+  const [hour, minute] = value.split(":").map(Number);
+  const suffix = hour >= 12 ? "pm" : "am";
+  const hour12 = hour % 12 || 12;
+  return `${hour12}:${String(minute).padStart(2, "0")} ${suffix}`;
+}
+
+function updateReservationTimeBounds() {
+  if (!dateInput || !timeInput) return;
+
+  const clock = getReservationClock();
+  dateInput.min = clock.date;
+
+  const openingMinute = timeValueToMinutes(timeInput.dataset.openingTime);
+  const closingMinute = timeValueToMinutes(timeInput.dataset.closingTime);
+  const isToday = dateInput.value === clock.date;
+  const nextQuarter = (Math.floor(clock.minutes / 15) + 1) * 15;
+  const firstAvailable = isToday ? Math.max(openingMinute, nextQuarter) : openingMinute;
+  const noTimesRemain = firstAvailable > closingMinute;
+  const effectiveMinimum = noTimesRemain ? closingMinute : firstAvailable;
+
+  timeInput.min = minutesToTimeValue(effectiveMinimum);
+  timeInput.max = minutesToTimeValue(closingMinute);
+  timeInput.setCustomValidity(noTimesRemain ? "No reservation times remain today. Please choose another date." : "");
+
+  if (timeInput.value) {
+    const selectedMinute = timeValueToMinutes(timeInput.value);
+    if (noTimesRemain || selectedMinute < firstAvailable || selectedMinute > closingMinute || selectedMinute % 15 !== 0) {
+      timeInput.value = "";
+    }
+  }
+}
+
+if (dateInput && timeInput) {
+  updateReservationTimeBounds();
+  dateInput.addEventListener("change", updateReservationTimeBounds);
+}
 const reservationForm = document.querySelector("#reservation-form");
 reservationForm?.addEventListener("submit", (event) => {
   event.preventDefault();
+  updateReservationTimeBounds();
   if (!reservationForm.reportValidity()) return;
 
   const formData = new FormData(reservationForm);
@@ -144,7 +210,7 @@ reservationForm?.addEventListener("submit", (event) => {
     "",
     `Name: ${formData.get("name")}`,
     `Date: ${prettyDate}`,
-    `Time: ${formData.get("time")}`,
+    `Time: ${formatReservationTimeLabel(formData.get("time"))}`,
     `Guests: ${formData.get("guests")}`,
     "",
     "Please let me know if you have a table available. Merci!",
