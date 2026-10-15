@@ -8,20 +8,23 @@
     <meta name="description" content="French Mediterranean bistro dining, generous pours and warm welcomes in Pererenan, Bali. Reserve a table at Genius Bistro." />
     <meta property="og:title" content="Genius Bistro - Good taste. Good company." />
     <meta property="og:description" content="An easy-going French Mediterranean bistro in Pererenan, Bali." />
-    <meta property="og:image" content="https://geniusbistrobali.com/wp-content/uploads/2024/07/DSC05253-scaled.jpg" />
+    <meta property="og:image" content="./src/assets/images/genius-wine-pour.jpg" />
     <title>Genius Bistro - Good taste. Good company.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://geniusbistrobali.com" />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./src/styles/main.css?v=sharp-text-1" />
-    <script type="module" src="./src/scripts/main.js"></script>
+    <link rel="stylesheet" href="./src/styles/luxury.css?v=2" />
+    <script defer src="./src/scripts/vendor/gsap.min.js?v=motion-1"></script>
+    <script defer src="./src/scripts/vendor/ScrollTrigger.min.js?v=motion-1"></script>
+    <script defer src="./src/scripts/main.js?v=motion-1"></script>
     <link rel="icon" type="image/svg+xml" href="./favicon.svg?v=4" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header" id="top">
-      <a class="brand" href="#top" aria-label="Genius Bistro home"><img src="https://geniusbistrobali.com/wp-content/uploads/2024/08/genius-siputra-logo-horizontal-black-300x72.png" alt="Genius Bistro by SIPutra" /></a>
+      <a class="brand" href="#top" aria-label="Genius Bistro home"><img src="./favicon.svg?v=5" alt="Genius Bistro" /></a>
       <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav"><span></span><span></span></button>
       <nav class="site-nav" id="site-nav" aria-label="Main navigation">
         <a href="#story">The bistro</a><a href="./menu.html">Our menu</a><a href="#visit">Find us</a>
@@ -31,7 +34,7 @@
 
     <main id="main">
       <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-media"><img class="hero-image" src="https://geniusbistrobali.com/wp-content/uploads/2024/07/DSC05253-scaled.jpg" alt="Guests sharing a meal in Genius Bistro's warm brick dining room" fetchpriority="high" /></div>
+        <div class="hero-media"><img class="hero-image" src="./src/assets/images/genius-wine-pour.jpg" alt="A glass of wine poured at Genius Bistro" fetchpriority="high" /></div>
         <div class="hero-shade"></div>
         <div class="hero-inner section-wrap">
           <div class="hero-copy">
@@ -59,23 +62,23 @@
 
       <section class="story section-wrap" id="story">
         <div class="story-copy reveal"><p class="eyebrow eyebrow-dark"><span class="eyebrow-line"></span> THE GENIUS WAY</p><h2>Come for dinner.<br />Make a night <em>of it.</em></h2><p>Some places are made for rushing through. This isn’t one of them. Pull up a chair for French Mediterranean comfort, a generous glass, and the simple pleasure of having nowhere else to be.</p><a class="text-link text-link-button" href="#menu">Meet your new favourites <span aria-hidden="true"><i class="arrow-icon" aria-hidden="true"></i></span></a></div>
-        <figure class="story-photo reveal"><img src="https://geniusbistrobali.com/wp-content/uploads/2024/08/DSC05368-copy.jpg" alt="Guests sharing plates and conversation at Genius Bistro" loading="lazy" /><figcaption><span>01</span> THE GOOD PART IS BEING TOGETHER</figcaption></figure>
+        <figure class="story-photo reveal"><img src="./src/assets/images/genius-dish.jpg" alt="A French Mediterranean dish served at Genius Bistro" loading="lazy" /><figcaption><span>01</span> THE GOOD PART IS BEING TOGETHER</figcaption></figure>
       </section>
 
       <section class="menu-section" id="menu">
         <div class="section-wrap">
           <div class="section-heading reveal"><div><p class="eyebrow eyebrow-dark"><span class="eyebrow-line"></span> ALL DAY, YOUR WAY</p><h2>Order what<br />makes you <em>happy.</em></h2></div><a class="text-link menu-all-link" href="./menu.html">See the full menu <span aria-hidden="true"><i class="arrow-icon" aria-hidden="true"></i></span></a></div>
           <div class="menu-grid">
-            <a class="menu-card menu-card-coffee reveal" href="./breakfast.html"><div class="menu-photo"><img src="https://geniusbistrobali.com/wp-content/uploads/2019/12/RZM_4866.jpg" alt="Latte art at Genius Bistro" loading="lazy" /><span class="menu-photo-number">01</span></div><div class="menu-card-footer"><span>THE FIRST POUR</span><h3>Breakfast <b><i class="arrow-icon" aria-hidden="true"></i></b></h3></div></a>
-            <a class="menu-card menu-card-food reveal" href="./lunch-dinner.html"><div class="menu-photo"><img src="https://geniusbistrobali.com/wp-content/uploads/2024/07/DSC05308.jpg" alt="Goat cheese salad from the Genius Bistro menu" loading="lazy" /><span class="menu-photo-number">02</span></div><div class="menu-card-footer"><span>THE LONG LUNCH</span><h3>Lunch & dinner <b><i class="arrow-icon" aria-hidden="true"></i></b></h3></div></a>
-            <a class="menu-card menu-card-wine reveal" href="./wine-drinks.html"><div class="menu-photo"><img src="https://geniusbistrobali.com/wp-content/uploads/2024/08/DSC05405-copy.jpg" alt="Wine poured tableside for a dinner at Genius Bistro" loading="lazy" /><span class="menu-photo-number">03</span></div><div class="menu-card-footer"><span>THE LAST WORD</span><h3>Wine & drinks <b><i class="arrow-icon" aria-hidden="true"></i></b></h3></div></a>
+            <a class="menu-card menu-card-coffee reveal" href="./breakfast.html"><div class="menu-photo"><img src="./src/assets/images/genius-coffee.jpg" alt="Latte art at Genius Bistro" loading="lazy" /><span class="menu-photo-number">01</span></div><div class="menu-card-footer"><span>THE FIRST POUR</span><h3>Breakfast <b><i class="arrow-icon" aria-hidden="true"></i></b></h3></div></a>
+            <a class="menu-card menu-card-food reveal" href="./lunch-dinner.html"><div class="menu-photo"><img src="./src/assets/images/genius-dish.jpg" alt="Goat cheese salad from the Genius Bistro menu" loading="lazy" /><span class="menu-photo-number">02</span></div><div class="menu-card-footer"><span>THE LONG LUNCH</span><h3>Lunch & dinner <b><i class="arrow-icon" aria-hidden="true"></i></b></h3></div></a>
+            <a class="menu-card menu-card-wine reveal" href="./wine-drinks.html"><div class="menu-photo"><img src="./src/assets/images/genius-wine-pour.jpg" alt="Wine poured tableside for a dinner at Genius Bistro" loading="lazy" /><span class="menu-photo-number">03</span></div><div class="menu-card-footer"><span>THE LAST WORD</span><h3>Wine & drinks <b><i class="arrow-icon" aria-hidden="true"></i></b></h3></div></a>
           </div>
           <p class="menu-caption">THE PHOTO IS REAL. THE APPETITE IS YOURS. <span>Menus may change; check the official list for the latest.</span></p>
         </div>
       </section>
 
       <section class="interlude">
-        <img src="https://geniusbistrobali.com/wp-content/uploads/2024/08/DSC05405-copy.jpg" alt="A bottle being poured for friends at dinner" loading="lazy" />
+        <img src="./src/assets/images/genius-wine-pour.jpg" alt="A bottle being poured for friends at dinner" loading="lazy" />
         <div class="interlude-shade"></div>
         <div class="interlude-copy section-wrap reveal"><p class="eyebrow"><span class="eyebrow-line"></span> STAY A LITTLE LONGER</p><h2>One more glass.<br /><em>One more story.</em></h2><a class="button button-primary" href="#reservation-form">Save me a seat <span class="button-arrow" aria-hidden="true"><i class="arrow-icon" aria-hidden="true"></i></span></a></div>
         <span class="interlude-caption">GOOD EVENINGS, MADE HERE.</span>
@@ -83,12 +86,18 @@
 
       <section class="visit section-wrap" id="visit">
         <div class="visit-heading reveal"><p class="eyebrow eyebrow-dark"><span class="eyebrow-line"></span> YOUR NEXT GOOD MEAL</p><h2>Meet us<br /><em>in Pererenan.</em></h2><p>A little north of central Canggu, with tables inside and out. Come as you are.</p><a class="button button-dark" href="https://maps.google.com/?q=Genius+Bistro,+Jl.+Sempol,+Pererenan,+Bali" target="_blank" rel="noopener noreferrer">Get directions <span class="button-arrow" aria-hidden="true"><i class="arrow-icon" aria-hidden="true"></i></span></a></div>
-        <div class="visit-photo reveal"><img src="https://geniusbistrobali.com/wp-content/uploads/2020/04/4.jpg" alt="Genius Bistro's brick building framed by tropical greenery" loading="lazy" /><span>JL. SEMPOL · PERERENAN</span></div>
-        <div class="visit-meta"><div><span>FIND US</span><p>Jl. Sempol, Pererenan<br />Canggu, Bali 80351</p></div><div><span>OPEN DAILY</span><p>8:00 am – 11:00 pm</p></div><div><span>CALL THE BISTRO</span><p><a href="tel:+6282145052727">+62 821 4505 2727</a></p></div><div><span>FOLLOW ALONG</span><p><a href="https://www.instagram.com/geniusbistro_bali/" target="_blank" rel="noopener noreferrer">Instagram <b><i class="arrow-icon" aria-hidden="true"></i></b></a></p></div></div>
+        <div class="visit-photo reveal"><img src="./src/assets/images/genius-coffee.jpg" alt="Coffee served at Genius Bistro in Pererenan" loading="lazy" /><span>JL. SEMPOL · PERERENAN</span></div>
+        <div class="visit-meta">
+          <div><span>FIND US</span><p><a href="https://maps.google.com/?q=Genius+Bistro,+Jl.+Sempol,+Pererenan,+Bali" target="_blank" rel="noopener noreferrer">Jl. Sempol, Pererenan<br />Canggu, Bali 80351 <b><i class="arrow-icon" aria-hidden="true"></i></b></a></p></div>
+          <div><span>OPEN DAILY</span><p>8:00 am - 11:00 pm</p></div>
+          <div><span>CALL THE BISTRO</span><p><a href="https://wa.me/6282145052727" target="_blank" rel="noopener noreferrer" aria-label="Chat with Genius Bistro on WhatsApp">+62 821 4505 2727</a></p></div>
+          <div><span>EMAIL US</span><p><a href="mailto:info@geniusbistrobali.com">info@geniusbistrobali.com</a></p></div>
+          <div class="visit-socials"><span>FOLLOW US</span><p><a href="https://www.instagram.com/geniusbistro_bali/" target="_blank" rel="noopener noreferrer">Instagram <b><i class="arrow-icon" aria-hidden="true"></i></b></a><a href="https://www.tripadvisor.co.id/Restaurant_Review-g5323528-d19478165-Reviews-Genius_Bistro-Pererenan_Canggu_North_Kuta_Badung_Regency_Bali.html" target="_blank" rel="noopener noreferrer">Tripadvisor <b><i class="arrow-icon" aria-hidden="true"></i></b></a></p></div>
+        </div>
       </section>
     </main>
 
-    <footer class="site-footer"><div class="footer-main section-wrap"><a class="footer-brand" href="#top" aria-label="Genius Bistro - back to top"><img src="https://geniusbistrobali.com/wp-content/uploads/2024/08/genius-siputra-logo-horizontal-black-300x72.png" alt="Genius Bistro by SIPutra" /></a><p>Good taste.<br /><em>Good company.</em></p><a class="footer-booking" href="#reservation-form">Make it a date <span><i class="arrow-icon" aria-hidden="true"></i></span></a></div><div class="footer-bottom section-wrap"><span>© <span id="year"></span> GENIUS BISTRO</span><span>PERERENAN · BALI</span><a href="https://www.instagram.com/geniusbistro_bali/" target="_blank" rel="noopener noreferrer">INSTAGRAM <i class="arrow-icon" aria-hidden="true"></i></a></div></footer>
+    <footer class="site-footer"><div class="footer-main section-wrap"><a class="footer-brand" href="#top" aria-label="Genius Bistro - back to top"><img src="./favicon.svg?v=5" alt="Genius Bistro" /></a><p>Good taste.<br /><em>Good company.</em></p><a class="footer-booking" href="#reservation-form">Make it a date <span><i class="arrow-icon" aria-hidden="true"></i></span></a></div><div class="footer-bottom section-wrap"><span>© <span id="year"></span> GENIUS BISTRO</span><span>PERERENAN · BALI</span><a href="https://www.instagram.com/geniusbistro_bali/" target="_blank" rel="noopener noreferrer">INSTAGRAM <i class="arrow-icon" aria-hidden="true"></i></a></div></footer>
     <a class="floating-booking" href="#reservation-form" aria-hidden="true" tabindex="-1">Reserve <span aria-hidden="true"><i class="arrow-icon" aria-hidden="true"></i></span></a>
     <a class="mobile-booking" href="#reservation-form">Reserve your table <span aria-hidden="true"><i class="arrow-icon" aria-hidden="true"></i></span></a>
   </body>

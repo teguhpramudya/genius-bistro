@@ -1,0 +1,4 @@
+GSAP 3.15.0
+Locally vendored from the official npm package for self-hosted use.
+GSAP is copyright GreenSock. See https://gsap.com/standard-license for terms.
+The site uses only gsap.min.js and ScrollTrigger.min.js.

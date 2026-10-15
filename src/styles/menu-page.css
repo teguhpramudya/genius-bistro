@@ -11,7 +11,7 @@
 .menu-main { overflow: hidden; }
 .menu-hero { position: relative; display: flex; min-height: 370px; align-items: end; overflow: hidden; padding: 77px 0 66px; border-bottom: 1px solid rgba(255,255,255,.1); background: #202122; }
 .menu-hero::before { position: absolute; inset: 0; background: linear-gradient(90deg,rgba(15,16,17,.94),rgba(15,16,17,.73) 50%,rgba(15,16,17,.37)),linear-gradient(0deg,rgba(15,16,17,.56),transparent 65%); content: ""; }
-.menu-hero-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 55%; filter: grayscale(.46) saturate(.6); animation: menu-image-arrive 1.4s ease both; }
+.menu-hero-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 55%; filter: grayscale(.46) saturate(.6); animation: menu-image-arrive 1.15s cubic-bezier(.2,.7,.2,1) both; }
 .menu-hero-inner { position: relative; z-index: 1; display: flex; width: min(1320px,86%); align-items: end; justify-content: space-between; gap: 35px; margin: auto; }
 .menu-hero .eyebrow { margin-bottom: 18px; color: rgba(255,255,255,.7); }
 .menu-hero h1 { margin: 0; color: #f3f1ec; font-family: var(--serif); font-size: clamp(65px,9vw,112px); font-weight: 400; letter-spacing: -.075em; line-height: .88; }
@@ -47,8 +47,10 @@
 .menu-bottom-cta .eyebrow { margin-bottom: 13px; color: #999a98; }
 .menu-bottom-cta h2 { margin: 0; font-family: var(--serif); font-size: clamp(42px,5vw,59px); font-weight: 400; letter-spacing: -.07em; line-height: .95; }
 .menu-bottom-cta h2 em { color: #c9c4b9; font-weight: 400; }
-.menu-lightbox { position: fixed; width: min(96vw,1500px); max-width: none; height: min(95dvh,1000px); max-height: none; padding: 53px 14px 14px; overflow: hidden; border: 1px solid rgba(255,255,255,.27); color: white; background: #1b1c1d; box-shadow: 0 22px 80px rgba(0,0,0,.58); }
-.menu-lightbox::backdrop { background: rgba(8,9,10,.88); backdrop-filter: blur(7px); }
+.menu-lightbox { position: fixed; width: min(96vw,1500px); max-width: none; height: min(95dvh,1000px); max-height: none; padding: 53px 14px 14px; overflow: hidden; border: 1px solid rgba(255,255,255,.27); color: white; background: #1b1c1d; box-shadow: 0 22px 80px rgba(0,0,0,.58); opacity: 0; transform: translateY(7px) scale(.992); transition: opacity .24s ease,transform .3s cubic-bezier(.2,.7,.2,1),display .3s allow-discrete,overlay .3s allow-discrete; }
+.menu-lightbox[open] { opacity: 1; transform: none; }
+.menu-lightbox::backdrop { background: rgba(8,9,10,.88); backdrop-filter: blur(7px); transition: background-color .3s ease; }
+@starting-style { .menu-lightbox[open] { opacity: 0; transform: translateY(7px) scale(.992); } .menu-lightbox[open]::backdrop { background: rgba(8,9,10,0); } }
 .menu-lightbox form { position: absolute; top: 11px; right: 13px; }
 .lightbox-close { display: inline-flex; align-items: center; gap: 12px; padding: 7px 8px 7px 13px; border: 1px solid rgba(255,255,255,.34); border-radius: 999px; color: white; background: transparent; font-size: 8px; cursor: pointer; }
 .lightbox-close span { display: grid; width: 25px; height: 25px; place-items: center; border-radius: 50%; color: #171819; background: #c9c4b9; font-size: 16px; }
@@ -67,10 +69,10 @@
 .menu-overview-card { position: relative; display: flex; min-height: clamp(300px,36vw,470px); align-items: end; overflow: hidden; border: 1px solid rgba(255,255,255,.13); color: white; background: #292a2b; isolation: isolate; }
 .menu-overview-card::before, .menu-overview-card::after { position: absolute; z-index: -1; inset: 0; content: ""; }
 .menu-overview-card::before { background-position: center; background-size: cover; filter: grayscale(.32) saturate(.64); transition: transform .8s cubic-bezier(.2,.7,.2,1),filter .5s; }
-.menu-overview-card--breakfast::before { background-image: url("https://geniusbistrobali.com/wp-content/uploads/2019/12/RZM_4866.jpg"); }
-.menu-overview-card--lunch-dinner::before { background-image: url("https://geniusbistrobali.com/wp-content/uploads/2024/07/DSC05308.jpg"); }
-.menu-overview-card--wine-drinks::before { background-image: url("https://geniusbistrobali.com/wp-content/uploads/2024/08/DSC05405-copy.jpg"); }
-.menu-overview-card--happy-hour::before { background-image: url("https://geniusbistrobali.com/wp-content/uploads/2024/08/DSC05405-copy.jpg"); }
+.menu-overview-card--breakfast::before { background-image: url("../assets/images/genius-coffee.jpg"); }
+.menu-overview-card--lunch-dinner::before { background-image: url("../assets/images/genius-dish.jpg"); }
+.menu-overview-card--wine-drinks::before { background-image: url("../assets/images/genius-wine-pour.jpg"); }
+.menu-overview-card--happy-hour::before { background-image: url("../assets/images/genius-wine-pour.jpg"); }
 .menu-overview-card::after { background: linear-gradient(0deg,rgba(12,13,14,.95),rgba(12,13,14,.1) 75%),linear-gradient(90deg,rgba(12,13,14,.22),transparent 80%); }
 .menu-overview-card:hover::before { filter: grayscale(.05) saturate(.84); transform: scale(1.045); }
 .overview-number { position: absolute; top: 19px; left: 19px; color: rgba(255,255,255,.78); font-size: 7px; letter-spacing: .16em; }
@@ -84,7 +86,7 @@
 .overview-footer a { color: rgba(255,255,255,.75); transition: color .2s; }
 .overview-footer a:hover { color: #c9c4b9; }
 
-@keyframes menu-image-arrive { from { transform: scale(1.04); opacity: .7; } to { transform: scale(1); opacity: 1; } }
+@keyframes menu-image-arrive { from { transform: scale(1.025); opacity: .86; } to { transform: scale(1); opacity: 1; } }
 @media (max-width: 700px) {
   .menu-header { height: 68px; }
   .menu-header .brand img { width: 165px; }
@@ -135,7 +137,7 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .menu-hero-image, .menu-overview-card::before { animation: none; transition: none; }
-  .menu-sheet, .menu-sheet img { transition: none; }
+  .menu-sheet, .menu-sheet img, .menu-lightbox, .menu-lightbox::backdrop { transition: none; }
 }
 
 /* Lift the smallest menu-page copy to a comfortable reading size. */

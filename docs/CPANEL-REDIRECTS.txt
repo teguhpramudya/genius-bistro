@@ -1,0 +1,13 @@
+# Apache rules for Genius Bistro cPanel
+# Merge these directives into the EXISTING document-root .htaccess.
+# Do not replace the WordPress .htaccess; keep its original rewrite block below this one.
+
+DirectoryIndex index.html index.php
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^breaskfast/?$ /breakfast.html [R=301,L,NE]
+RewriteRule ^happy-hour/?$ /happy-hour.html [R=301,L,NE]
+RewriteRule ^all-day-dining/?$ /lunch-dinner.html [R=301,L,NE]
+RewriteRule ^wine-drink-list/?$ /wine-drinks.html [R=301,L,NE]
+</IfModule>

@@ -17,6 +17,22 @@ document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") closeMenuNav();
 });
 
+
+const motionTargets = document.querySelectorAll(".menu-overview-card, .menu-sheet");
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if ("IntersectionObserver" in window && !reduceMotion && motionTargets.length) {
+  document.documentElement.classList.add("js-menu-motion");
+  const motionObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-visible");
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.14, rootMargin: "0px 0px -28px 0px" });
+
+  motionTargets.forEach((target) => motionObserver.observe(target));
+}
 const year = document.querySelector("#year");
 if (year) year.textContent = String(new Date().getFullYear());
 
